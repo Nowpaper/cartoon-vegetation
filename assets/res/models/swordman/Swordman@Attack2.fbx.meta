@@ -1,0 +1,78 @@
+{
+  "ver": "2.0.14",
+  "importer": "fbx",
+  "imported": true,
+  "uuid": "c08c58b7-b926-4e73-b15d-96be77a49936",
+  "files": [],
+  "subMetas": {
+    "2af64": {
+      "importer": "gltf-animation",
+      "uuid": "c08c58b7-b926-4e73-b15d-96be77a49936@2af64",
+      "displayName": "",
+      "id": "2af64",
+      "name": "Attack2.animation",
+      "userData": {
+        "gltfIndex": 0,
+        "wrapMode": 2,
+        "sample": 30,
+        "span": {
+          "from": 0,
+          "to": 1.5416666269302368
+        },
+        "events": []
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "998dd": {
+      "importer": "gltf-scene",
+      "uuid": "c08c58b7-b926-4e73-b15d-96be77a49936@998dd",
+      "displayName": "",
+      "id": "998dd",
+      "name": "Swordman@Attack2.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.12",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [],
+    "legacyFbxImporter": false,
+    "animationImportSettings": [
+      {
+        "name": "mixamo.com",
+        "duration": 1.5416666269302368,
+        "fps": 30,
+        "splits": [
+          {
+            "name": "Attack2",
+            "from": 0,
+            "to": 1.5416666269302368,
+            "wrapMode": 2
+          }
+        ]
+      }
+    ],
+    "redirect": "c08c58b7-b926-4e73-b15d-96be77a49936@998dd",
+    "assetFinder": {
+      "meshes": [],
+      "skeletons": [],
+      "textures": [],
+      "materials": [],
+      "scenes": [
+        "c08c58b7-b926-4e73-b15d-96be77a49936@998dd"
+      ]
+    }
+  }
+}

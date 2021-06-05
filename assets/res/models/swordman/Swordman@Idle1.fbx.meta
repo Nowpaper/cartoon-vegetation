@@ -1,0 +1,78 @@
+{
+  "ver": "2.0.14",
+  "importer": "fbx",
+  "imported": true,
+  "uuid": "87ccd987-1d60-4512-b3eb-1ee72ff30df4",
+  "files": [],
+  "subMetas": {
+    "bf369": {
+      "importer": "gltf-animation",
+      "uuid": "87ccd987-1d60-4512-b3eb-1ee72ff30df4@bf369",
+      "displayName": "",
+      "id": "bf369",
+      "name": "Idle1.animation",
+      "userData": {
+        "gltfIndex": 0,
+        "wrapMode": 2,
+        "sample": 30,
+        "span": {
+          "from": 0,
+          "to": 8.583333015441895
+        },
+        "events": []
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "7c26d": {
+      "importer": "gltf-scene",
+      "uuid": "87ccd987-1d60-4512-b3eb-1ee72ff30df4@7c26d",
+      "displayName": "",
+      "id": "7c26d",
+      "name": "Swordman@Idle1.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.12",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [],
+    "legacyFbxImporter": false,
+    "animationImportSettings": [
+      {
+        "name": "mixamo.com",
+        "duration": 8.583333015441895,
+        "fps": 30,
+        "splits": [
+          {
+            "name": "Idle1",
+            "from": 0,
+            "to": 8.583333015441895,
+            "wrapMode": 2
+          }
+        ]
+      }
+    ],
+    "redirect": "87ccd987-1d60-4512-b3eb-1ee72ff30df4@7c26d",
+    "assetFinder": {
+      "meshes": [],
+      "skeletons": [],
+      "textures": [],
+      "materials": [],
+      "scenes": [
+        "87ccd987-1d60-4512-b3eb-1ee72ff30df4@7c26d"
+      ]
+    }
+  }
+}

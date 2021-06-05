@@ -1,0 +1,78 @@
+{
+  "ver": "2.0.14",
+  "importer": "fbx",
+  "imported": true,
+  "uuid": "10ad7ebf-828f-4fc6-a8c5-38d3520d7f1c",
+  "files": [],
+  "subMetas": {
+    "2cd1c": {
+      "importer": "gltf-animation",
+      "uuid": "10ad7ebf-828f-4fc6-a8c5-38d3520d7f1c@2cd1c",
+      "displayName": "",
+      "id": "2cd1c",
+      "name": "Attack.animation",
+      "userData": {
+        "gltfIndex": 0,
+        "wrapMode": 2,
+        "sample": 30,
+        "span": {
+          "from": 0,
+          "to": 2.5833332538604736
+        },
+        "events": []
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "ba03c": {
+      "importer": "gltf-scene",
+      "uuid": "10ad7ebf-828f-4fc6-a8c5-38d3520d7f1c@ba03c",
+      "displayName": "",
+      "id": "ba03c",
+      "name": "Zombie@Attack.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.12",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [],
+    "legacyFbxImporter": false,
+    "animationImportSettings": [
+      {
+        "name": "mixamo.com",
+        "duration": 2.5833332538604736,
+        "fps": 30,
+        "splits": [
+          {
+            "name": "Attack",
+            "from": 0,
+            "to": 2.5833332538604736,
+            "wrapMode": 2
+          }
+        ]
+      }
+    ],
+    "redirect": "10ad7ebf-828f-4fc6-a8c5-38d3520d7f1c@ba03c",
+    "assetFinder": {
+      "meshes": [],
+      "skeletons": [],
+      "textures": [],
+      "materials": [],
+      "scenes": [
+        "10ad7ebf-828f-4fc6-a8c5-38d3520d7f1c@ba03c"
+      ]
+    }
+  }
+}

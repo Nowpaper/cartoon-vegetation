@@ -1,0 +1,78 @@
+{
+  "ver": "2.0.14",
+  "importer": "fbx",
+  "imported": true,
+  "uuid": "c217f22e-6398-498d-80c8-28511842deb1",
+  "files": [],
+  "subMetas": {
+    "dc888": {
+      "importer": "gltf-animation",
+      "uuid": "c217f22e-6398-498d-80c8-28511842deb1@dc888",
+      "displayName": "",
+      "id": "dc888",
+      "name": "Walking.animation",
+      "userData": {
+        "gltfIndex": 0,
+        "wrapMode": 2,
+        "sample": 30,
+        "span": {
+          "from": 0,
+          "to": 3.9583332538604736
+        },
+        "events": []
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "2e5a0": {
+      "importer": "gltf-scene",
+      "uuid": "c217f22e-6398-498d-80c8-28511842deb1@2e5a0",
+      "displayName": "",
+      "id": "2e5a0",
+      "name": "Zombie@Walking.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.12",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [],
+    "legacyFbxImporter": false,
+    "animationImportSettings": [
+      {
+        "name": "mixamo.com",
+        "duration": 3.9583332538604736,
+        "fps": 30,
+        "splits": [
+          {
+            "name": "Walking",
+            "from": 0,
+            "to": 3.9583332538604736,
+            "wrapMode": 2
+          }
+        ]
+      }
+    ],
+    "redirect": "c217f22e-6398-498d-80c8-28511842deb1@2e5a0",
+    "assetFinder": {
+      "meshes": [],
+      "skeletons": [],
+      "textures": [],
+      "materials": [],
+      "scenes": [
+        "c217f22e-6398-498d-80c8-28511842deb1@2e5a0"
+      ]
+    }
+  }
+}

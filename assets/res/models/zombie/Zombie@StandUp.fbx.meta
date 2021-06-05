@@ -1,0 +1,78 @@
+{
+  "ver": "2.0.14",
+  "importer": "fbx",
+  "imported": true,
+  "uuid": "88501a3b-9b2d-449d-bd4f-c312433759cf",
+  "files": [],
+  "subMetas": {
+    "400b1": {
+      "importer": "gltf-animation",
+      "uuid": "88501a3b-9b2d-449d-bd4f-c312433759cf@400b1",
+      "displayName": "",
+      "id": "400b1",
+      "name": "StandUp.animation",
+      "userData": {
+        "gltfIndex": 0,
+        "wrapMode": 2,
+        "sample": 30,
+        "span": {
+          "from": 0,
+          "to": 5.791666507720947
+        },
+        "events": []
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "832c1": {
+      "importer": "gltf-scene",
+      "uuid": "88501a3b-9b2d-449d-bd4f-c312433759cf@832c1",
+      "displayName": "",
+      "id": "832c1",
+      "name": "Zombie@StandUp.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.12",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [],
+    "legacyFbxImporter": false,
+    "animationImportSettings": [
+      {
+        "name": "mixamo.com",
+        "duration": 5.791666507720947,
+        "fps": 30,
+        "splits": [
+          {
+            "name": "StandUp",
+            "from": 0,
+            "to": 5.791666507720947,
+            "wrapMode": 2
+          }
+        ]
+      }
+    ],
+    "redirect": "88501a3b-9b2d-449d-bd4f-c312433759cf@832c1",
+    "assetFinder": {
+      "meshes": [],
+      "skeletons": [],
+      "textures": [],
+      "materials": [],
+      "scenes": [
+        "88501a3b-9b2d-449d-bd4f-c312433759cf@832c1"
+      ]
+    }
+  }
+}

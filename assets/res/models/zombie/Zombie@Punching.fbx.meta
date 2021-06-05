@@ -1,0 +1,78 @@
+{
+  "ver": "2.0.14",
+  "importer": "fbx",
+  "imported": true,
+  "uuid": "e64d4460-6b50-4fbf-b573-271f802e6703",
+  "files": [],
+  "subMetas": {
+    "49118": {
+      "importer": "gltf-animation",
+      "uuid": "e64d4460-6b50-4fbf-b573-271f802e6703@49118",
+      "displayName": "",
+      "id": "49118",
+      "name": "Punching.animation",
+      "userData": {
+        "gltfIndex": 0,
+        "wrapMode": 2,
+        "sample": 30,
+        "span": {
+          "from": 0,
+          "to": 3.7916667461395264
+        },
+        "events": []
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "b3345": {
+      "importer": "gltf-scene",
+      "uuid": "e64d4460-6b50-4fbf-b573-271f802e6703@b3345",
+      "displayName": "",
+      "id": "b3345",
+      "name": "Zombie@Punching.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.12",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [],
+    "legacyFbxImporter": false,
+    "animationImportSettings": [
+      {
+        "name": "mixamo.com",
+        "duration": 3.7916667461395264,
+        "fps": 30,
+        "splits": [
+          {
+            "name": "Punching",
+            "from": 0,
+            "to": 3.7916667461395264,
+            "wrapMode": 2
+          }
+        ]
+      }
+    ],
+    "redirect": "e64d4460-6b50-4fbf-b573-271f802e6703@b3345",
+    "assetFinder": {
+      "meshes": [],
+      "skeletons": [],
+      "textures": [],
+      "materials": [],
+      "scenes": [
+        "e64d4460-6b50-4fbf-b573-271f802e6703@b3345"
+      ]
+    }
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "ver": "2.0.14",
+  "importer": "fbx",
+  "imported": true,
+  "uuid": "e087f436-818d-4b1c-8a27-08776b44f260",
+  "files": [],
+  "subMetas": {
+    "ca7e4": {
+      "importer": "gltf-animation",
+      "uuid": "e087f436-818d-4b1c-8a27-08776b44f260@ca7e4",
+      "displayName": "",
+      "id": "ca7e4",
+      "name": "Death.animation",
+      "userData": {
+        "gltfIndex": 0,
+        "wrapMode": 2,
+        "sample": 30,
+        "span": {
+          "from": 0,
+          "to": 2.7916667461395264
+        },
+        "events": []
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "e0930": {
+      "importer": "gltf-scene",
+      "uuid": "e087f436-818d-4b1c-8a27-08776b44f260@e0930",
+      "displayName": "",
+      "id": "e0930",
+      "name": "Zombie@Death.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.12",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [],
+    "legacyFbxImporter": false,
+    "animationImportSettings": [
+      {
+        "name": "mixamo.com",
+        "duration": 2.7916667461395264,
+        "fps": 30,
+        "splits": [
+          {
+            "name": "Death",
+            "from": 0,
+            "to": 2.7916667461395264,
+            "wrapMode": 2
+          }
+        ]
+      }
+    ],
+    "redirect": "e087f436-818d-4b1c-8a27-08776b44f260@e0930",
+    "assetFinder": {
+      "meshes": [],
+      "skeletons": [],
+      "textures": [],
+      "materials": [],
+      "scenes": [
+        "e087f436-818d-4b1c-8a27-08776b44f260@e0930"
+      ]
+    }
+  }
+}

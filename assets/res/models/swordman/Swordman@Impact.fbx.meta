@@ -1,0 +1,78 @@
+{
+  "ver": "2.0.14",
+  "importer": "fbx",
+  "imported": true,
+  "uuid": "8af15558-4030-4e33-8279-55a56c63e8a3",
+  "files": [],
+  "subMetas": {
+    "26400": {
+      "importer": "gltf-scene",
+      "uuid": "8af15558-4030-4e33-8279-55a56c63e8a3@26400",
+      "displayName": "",
+      "id": "26400",
+      "name": "Swordman@Impact.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.12",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "63b91": {
+      "importer": "gltf-animation",
+      "uuid": "8af15558-4030-4e33-8279-55a56c63e8a3@63b91",
+      "displayName": "",
+      "id": "63b91",
+      "name": "Impact.animation",
+      "userData": {
+        "gltfIndex": 0,
+        "wrapMode": 2,
+        "sample": 30,
+        "span": {
+          "from": 0,
+          "to": 0.6666666865348816
+        },
+        "events": []
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [],
+    "legacyFbxImporter": false,
+    "animationImportSettings": [
+      {
+        "name": "mixamo.com",
+        "duration": 0.6666666865348816,
+        "fps": 30,
+        "splits": [
+          {
+            "name": "Impact",
+            "from": 0,
+            "to": 0.6666666865348816,
+            "wrapMode": 2
+          }
+        ]
+      }
+    ],
+    "redirect": "8af15558-4030-4e33-8279-55a56c63e8a3@26400",
+    "assetFinder": {
+      "meshes": [],
+      "skeletons": [],
+      "textures": [],
+      "materials": [],
+      "scenes": [
+        "8af15558-4030-4e33-8279-55a56c63e8a3@26400"
+      ]
+    }
+  }
+}
