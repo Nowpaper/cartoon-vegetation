@@ -3,19 +3,12 @@ import { _decorator, Component, Node, Vec3, Vec2, Animation, lerp, AnimationClip
 import input from '../utils/input';
 import { JoyStick } from '../utils/joy-stick';
 import OrbitCamera from '../utils/orbit-camera';
+import { Actor } from './Actor';
+import { AnimationInfo } from './AnimationInfo';
 const { ccclass, property, type } = _decorator;
 let tempVec3 = new Vec3;
 @ccclass('SwordMan')
-export class SwordMan extends Component {
-    
-    @property
-    moveSpeed = 10;
-
-    @property
-    runSpeed = 20;
-
-    @type(Animation)
-    animation: Animation | null = null;
+export class SwordMan extends Actor {
 
     @type(RigidBody)
     rigidBody: RigidBody | null = null;
@@ -29,7 +22,6 @@ export class SwordMan extends Component {
     rotation = 0;
     targetRotation = 0;
 
-    _currentAnim = '';
 
     _currentCollider: ColliderComponent | null = null;
 
@@ -37,8 +29,8 @@ export class SwordMan extends Component {
     @type(JoyStick)
     joyStick: JoyStick | null = null;
 
-    start () {
-        this.animation!.on(AnimationComponent.EventType.STOP, this.onAnimationStop.bind(this))
+    start() {
+        super.start();
         systemEvent.on(SystemEventType.KEY_UP, this.onKeyUp, this);
         systemEvent.on(SystemEventType.KEY_DOWN, this.onKeyDown, this);
         if (!sys.isMobile && this.joyStick) {
@@ -49,7 +41,7 @@ export class SwordMan extends Component {
             this.joyStick.node.on(Node.EventType.TOUCH_START, this.onJoyStickTouchStart, this);
         }
     }
-    onKeyDown (event: EventKeyboard) {
+    onKeyDown(event: EventKeyboard) {
         switch (event.keyCode) {
             case macro.KEY.up:
             case macro.KEY.w:
@@ -62,7 +54,7 @@ export class SwordMan extends Component {
             }
         }
     }
-    onKeyUp (event: EventKeyboard) {
+    onKeyUp(event: EventKeyboard) {
         switch (event.keyCode) {
             case macro.KEY.down:
             case macro.KEY.s:
@@ -70,31 +62,12 @@ export class SwordMan extends Component {
                 break;
         }
     }
-    onJoyStickTouchStart () {
+    onJoyStickTouchStart() {
         if (this.orbitCamera) {
             // this.orbitCamera.resetTargetRotation()
         }
     }
-    play (name) {
-        if (!this.animation) {
-            return;
-        }
-        if (this._currentAnim === name) {
-            let state = this.animation.getState(name);
-            if (state.wrapMode !== AnimationClip.WrapMode.Normal) {
-                return;
-            }
-        }
-        this._currentAnim = name
-
-        this.animation.crossFade(name, 0.1);
-    }
-
-    onAnimationStop (type, state) {
-        if (state.name === 'UnarmedJumpRunning') {
-        }
-    }
-    update (deltaTime: number) {
+    update(deltaTime: number) {
         // Your update function goes here.
 
         let moving = false;
@@ -133,31 +106,52 @@ export class SwordMan extends Component {
             moving = true;
             reverseRotation = 180;
         }
-
+        moving = moving && !this._attacking;
         Vec3.lerp(speed, speed, this.targetSpeed, deltaTime * 5);
 
-
+        /** 使用Jumping作为攻击键 */
+        if (input.key.space || (this.joyStick && this.joyStick.jump)) {
+            this.attack();
+        }
 
         if (moving) {
-            this.play('Run');
+            this._IdleTimer = 0;
+            this.play(new AnimationInfo('Run'));
         }
         else {
             speed.x = speed.z = 0;
-            this.play('ldle');
+            this.play(new AnimationInfo('Idle'));
         }
-
-        if (this.joyStick) {
-            this.rotation = this.targetRotation + reverseRotation;
+        if(!this._attacking){
+            if (this.joyStick) {
+                this.rotation = this.targetRotation + reverseRotation;
+            }
+            else {
+                this.rotation = lerp(this.rotation, this.targetRotation + reverseRotation, deltaTime * 5);
+            }
         }
-        else {
-            this.rotation = lerp(this.rotation, this.targetRotation + reverseRotation, deltaTime * 5);
-        }
-
         this.rigidBody!.getLinearVelocity(tempVec3);
         speed.y = tempVec3.y;
         this.rigidBody!.setLinearVelocity(speed);
 
 
         this.animation!.node.eulerAngles = tempVec3.set(0, this.rotation, 0);
+        super.update(deltaTime);
+    }
+    protected attack(){
+        const aniName = this._currentAnim?.name;
+        if(aniName == 'Idle'|| aniName == 'Idle1'){
+            const ex = ['Idle','Idle1','Run'];
+            const anim = new AnimationInfo('Attack1',4,ex,'Idle');
+            if(this._animQuque.length > 0){
+                if(this._animQuque[0].name === 'Attack1'){
+                    anim.name = 'Attack2';
+                }else if(this._animQuque[0].name === 'Attack2'){
+                    anim.name = 'Attack3';
+                }
+            }
+            this._attacking = true;
+            this.play(anim);
+        }
     }
 }

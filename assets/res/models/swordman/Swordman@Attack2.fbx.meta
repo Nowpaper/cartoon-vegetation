@@ -13,7 +13,7 @@
       "name": "Attack2.animation",
       "userData": {
         "gltfIndex": 0,
-        "wrapMode": 2,
+        "wrapMode": 1,
         "sample": 30,
         "span": {
           "from": 0,
@@ -59,7 +59,7 @@
             "name": "Attack2",
             "from": 0,
             "to": 1.5416666269302368,
-            "wrapMode": 2
+            "wrapMode": 1
           }
         ]
       }
