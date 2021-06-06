@@ -13,7 +13,7 @@
       "name": "StandUp.animation",
       "userData": {
         "gltfIndex": 0,
-        "wrapMode": 2,
+        "wrapMode": 1,
         "sample": 30,
         "span": {
           "from": 0,
@@ -59,7 +59,7 @@
             "name": "StandUp",
             "from": 0,
             "to": 5.791666507720947,
-            "wrapMode": 2
+            "wrapMode": 1
           }
         ]
       }

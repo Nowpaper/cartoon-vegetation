@@ -13,7 +13,7 @@
       "name": "ReactionHit.animation",
       "userData": {
         "gltfIndex": 0,
-        "wrapMode": 2,
+        "wrapMode": 1,
         "sample": 30,
         "span": {
           "from": 0,
@@ -59,7 +59,7 @@
             "name": "ReactionHit",
             "from": 0,
             "to": 1.4583333730697632,
-            "wrapMode": 2
+            "wrapMode": 1
           }
         ]
       }

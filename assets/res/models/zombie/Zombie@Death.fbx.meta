@@ -13,7 +13,7 @@
       "name": "Death.animation",
       "userData": {
         "gltfIndex": 0,
-        "wrapMode": 2,
+        "wrapMode": 0,
         "sample": 30,
         "span": {
           "from": 0,
@@ -59,7 +59,7 @@
             "name": "Death",
             "from": 0,
             "to": 2.7916667461395264,
-            "wrapMode": 2
+            "wrapMode": 0
           }
         ]
       }

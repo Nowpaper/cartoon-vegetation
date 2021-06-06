@@ -6,6 +6,10 @@ const { ccclass, property, type } = _decorator;
 
 @ccclass('Actor')
 export class Actor extends Component {
+    @type(RigidBody)
+    rigidBody: RigidBody | null = null;
+    @property
+    actorGroup = 0;
     @property
     moveSpeed = 10;
 
@@ -17,7 +21,13 @@ export class Actor extends Component {
 
     _currentAnim: AnimationInfo | null = null;
     start() {
-        this.animation!.on(AnimationComponent.EventType.FINISHED, this.onAnimationFinished.bind(this))
+        if(!this.animation){
+            this.animation = this.node.getComponentInChildren(Animation);
+        }
+        if(!this.rigidBody){
+            this.rigidBody = this.node.getComponent(RigidBody);
+        }
+        this.animation!.on(AnimationComponent.EventType.FINISHED, this.onAnimationFinished.bind(this));
     }
     update(deltaTime: number) {
         /////////////////

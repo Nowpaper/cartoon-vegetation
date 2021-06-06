@@ -10,8 +10,6 @@ let tempVec3 = new Vec3;
 @ccclass('SwordMan')
 export class SwordMan extends Actor {
 
-    @type(RigidBody)
-    rigidBody: RigidBody | null = null;
 
     @type(OrbitCamera)
     orbitCamera: OrbitCamera | null = null;
@@ -39,7 +37,7 @@ export class SwordMan extends Actor {
 
         if (this.joyStick) {
             this.joyStick.node.on(Node.EventType.TOUCH_START, this.onJoyStickTouchStart, this);
-        }
+        }        
     }
     onKeyDown(event: EventKeyboard) {
         switch (event.keyCode) {

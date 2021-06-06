@@ -13,7 +13,7 @@
       "name": "Punching.animation",
       "userData": {
         "gltfIndex": 0,
-        "wrapMode": 2,
+        "wrapMode": 1,
         "sample": 30,
         "span": {
           "from": 0,
@@ -59,7 +59,7 @@
             "name": "Punching",
             "from": 0,
             "to": 3.7916667461395264,
-            "wrapMode": 2
+            "wrapMode": 1
           }
         ]
       }

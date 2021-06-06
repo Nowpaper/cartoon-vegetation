@@ -23,17 +23,20 @@
     "_active": true,
     "_components": [
       {
-        "__id__": 81
+        "__id__": 94
       },
       {
-        "__id__": 83
+        "__id__": 96
       },
       {
-        "__id__": 85
+        "__id__": 98
+      },
+      {
+        "__id__": 100
       }
     ],
     "_prefab": {
-      "__id__": 87
+      "__id__": 102
     },
     "_lpos": {
       "__type__": "cc.Vec3",
@@ -213,6 +216,27 @@
       },
       {
         "__id__": 80
+      },
+      {
+        "__id__": 81
+      },
+      {
+        "__id__": 83
+      },
+      {
+        "__id__": 85
+      },
+      {
+        "__id__": 87
+      },
+      {
+        "__id__": 88
+      },
+      {
+        "__id__": 90
+      },
+      {
+        "__id__": 92
       }
     ],
     "removedComponents": []
@@ -356,7 +380,7 @@
     "propertyPath": [
       "_active"
     ],
-    "value": true
+    "value": false
   },
   {
     "__type__": "cc.TargetInfo",
@@ -947,6 +971,118 @@
     "value": false
   },
   {
+    "__type__": "CCPropertyOverrideInfo",
+    "targetInfo": {
+      "__id__": 82
+    },
+    "propertyPath": [
+      "_active"
+    ],
+    "value": false
+  },
+  {
+    "__type__": "cc.TargetInfo",
+    "localID": [
+      "7dRh/I+hdfoqamtVshNr6r"
+    ]
+  },
+  {
+    "__type__": "CCPropertyOverrideInfo",
+    "targetInfo": {
+      "__id__": 84
+    },
+    "propertyPath": [
+      "_active"
+    ],
+    "value": true
+  },
+  {
+    "__type__": "cc.TargetInfo",
+    "localID": [
+      "8fqcyRmr5WOpIOGMe/NGtZ"
+    ]
+  },
+  {
+    "__type__": "CCPropertyOverrideInfo",
+    "targetInfo": {
+      "__id__": 86
+    },
+    "propertyPath": [
+      "_materials",
+      "0"
+    ],
+    "value": {
+      "__uuid__": "032d6f74-dfbd-4f51-8509-7ba2afb311c0",
+      "__expectedType__": "cc.Material"
+    }
+  },
+  {
+    "__type__": "cc.TargetInfo",
+    "localID": [
+      "0fGhslCHtRJ73JWpjewDEH"
+    ]
+  },
+  {
+    "__type__": "CCPropertyOverrideInfo",
+    "targetInfo": {
+      "__id__": 86
+    },
+    "propertyPath": [
+      "_skinningRoot"
+    ],
+    "value": {
+      "__id__": 2
+    }
+  },
+  {
+    "__type__": "CCPropertyOverrideInfo",
+    "targetInfo": {
+      "__id__": 89
+    },
+    "propertyPath": [
+      "_active"
+    ],
+    "value": true
+  },
+  {
+    "__type__": "cc.TargetInfo",
+    "localID": [
+      "d0s5aNcupap4sRwIjrGkq3"
+    ]
+  },
+  {
+    "__type__": "CCPropertyOverrideInfo",
+    "targetInfo": {
+      "__id__": 91
+    },
+    "propertyPath": [
+      "_active"
+    ],
+    "value": true
+  },
+  {
+    "__type__": "cc.TargetInfo",
+    "localID": [
+      "96F8GGxD9UrI5UOOXhQXdo"
+    ]
+  },
+  {
+    "__type__": "CCPropertyOverrideInfo",
+    "targetInfo": {
+      "__id__": 93
+    },
+    "propertyPath": [
+      "_active"
+    ],
+    "value": false
+  },
+  {
+    "__type__": "cc.TargetInfo",
+    "localID": [
+      "53lxK+XMRW8YMV0cyHX+F0"
+    ]
+  },
+  {
     "__type__": "cc.RigidBody",
     "_name": "",
     "_objFlags": 0,
@@ -955,7 +1091,7 @@
     },
     "_enabled": true,
     "__prefab": {
-      "__id__": 82
+      "__id__": 95
     },
     "_group": 1,
     "_type": 1,
@@ -991,7 +1127,7 @@
     },
     "_enabled": true,
     "__prefab": {
-      "__id__": 84
+      "__id__": 97
     },
     "_material": {
       "__uuid__": "c4db34df-38c8-4c7e-ac43-6873be8b7dc0",
@@ -1022,7 +1158,7 @@
     },
     "_enabled": true,
     "__prefab": {
-      "__id__": 86
+      "__id__": 99
     },
     "_material": null,
     "_isTrigger": false,
@@ -1043,6 +1179,27 @@
   {
     "__type__": "cc.CompPrefabInfo",
     "fileId": "7aJX4rnrtGPbTJ6nRl9cfa"
+  },
+  {
+    "__type__": "c2680JBC9RJz5ZVU7cCj+5H",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 1
+    },
+    "_enabled": true,
+    "__prefab": {
+      "__id__": 101
+    },
+    "actorGroup": 1,
+    "moveSpeed": 10,
+    "runSpeed": 20,
+    "animation": null,
+    "_id": ""
+  },
+  {
+    "__type__": "cc.CompPrefabInfo",
+    "fileId": "8f1o4meVpKwoYPcFxX1zlK"
   },
   {
     "__type__": "cc.PrefabInfo",
