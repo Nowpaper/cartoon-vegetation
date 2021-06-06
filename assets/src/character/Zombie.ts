@@ -71,7 +71,7 @@ export class Zombie extends Actor {
             for (let actor of this.node.parent.children) {
                 if (actor == this.node) continue;
                 if (actor.getComponent(Actor)?.actorGroup != this.actorGroup) {
-                    const v = actor.position.subtract(this.node.position);
+                    const v = actor.position.clone().subtract(this.node.position);
                     if (v.length() < this.searchDistance) {
                         this.lockTarget = actor;
                         this.play(new AnimationInfo('Transition', -1, ["Idle"], 'Walking'));
