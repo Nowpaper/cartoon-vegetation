@@ -1,5 +1,5 @@
 
-import { _decorator, Component, Node, Vec3 } from 'cc';
+import { _decorator, Component, Node, Vec3, math } from 'cc';
 import { Actor } from './Actor';
 import { AnimationInfo } from './AnimationInfo';
 const { ccclass, property } = _decorator;
@@ -23,7 +23,7 @@ export class Zombie extends Actor {
         let speedAmount = this.moveSpeed;
         let targetRotationRad = this.node.eulerAngles.y;
         let speed = new Vec3;
-        if (this._currentAnim?.name == "Walking") {
+        if (this._currentAnim?.name == "Walking" && !this._attacking) {
             this.targetSpeed.x = speedAmount * Math.sin(targetRotationRad);
             this.targetSpeed.z = speedAmount * Math.cos(targetRotationRad);
             Vec3.lerp(speed, speed, this.targetSpeed, deltaTime * 5);
@@ -38,9 +38,12 @@ export class Zombie extends Actor {
         // 如果锁定目标存在，则看是否离开范围
         if (this.lockTarget) {
             const v = this.lockTarget.position.subtract(this.node.position);
+            const len = v.length();
             if (v.length() > this.searchDistance) {
                 this.lockTarget = null;
                 this.play(new AnimationInfo('Idle'));
+            }else if(len < 1){
+                this.attack();
             }
         }
         if (this.node.parent && !this.lockTarget) {
@@ -57,5 +60,11 @@ export class Zombie extends Actor {
                 }
             }
         }
+    }
+    protected attack() {
+        if (this._attacking) { return; }
+        super.attack();
+        let attname = math.random() < 0.5 ? 'Attack' : 'Punching';
+        this.play(new AnimationInfo(attname, -1, [], 'Walking'));
     }
 }

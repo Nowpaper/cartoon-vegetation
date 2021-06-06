@@ -1,5 +1,5 @@
 
-import { _decorator, Component, Node, Vec3, Vec2, Animation, lerp, AnimationClip, AnimationState, animation, AnimationComponent, RigidBody, ColliderComponent, ICollisionEvent, BoxCollider, sys, systemEvent, SystemEventType, EventKeyboard, macro } from 'cc';
+import { _decorator, Component, Node, Vec3, Vec2, Animation, lerp, AnimationClip, AnimationState, animation, AnimationComponent, RigidBody, ColliderComponent, ICollisionEvent, BoxCollider, sys, systemEvent, SystemEventType, EventKeyboard, macro, math } from 'cc';
 import { AnimationInfo } from './AnimationInfo';
 
 const { ccclass, property, type } = _decorator;
@@ -77,11 +77,16 @@ export class Actor extends Component {
             }
         }
     }
-    protected _IdleTimer = 7;
+    protected _IdleTimer = math.random() * 5 + 3;
     /** 一个动画队列 */
     protected _animQuque:AnimationInfo[] = [];
     protected attack(){
         this._attacking = true;
     }
     protected _attacking = false;
+    protected _beating = false;
+    /** 被打中 */
+    protected beaten(){
+        this._beating = true;
+    }
 }
