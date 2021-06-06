@@ -37,7 +37,7 @@ export class SwordMan extends Actor {
 
         if (this.joyStick) {
             this.joyStick.node.on(Node.EventType.TOUCH_START, this.onJoyStickTouchStart, this);
-        }        
+        }
     }
     onKeyDown(event: EventKeyboard) {
         switch (event.keyCode) {
@@ -66,8 +66,9 @@ export class SwordMan extends Actor {
         }
     }
     update(deltaTime: number) {
-        // Your update function goes here.
-
+        if (this._beating || this._attacking) {
+            return;
+        }
         let moving = false;
         let speed = this.speed;
         let speedAmount = this.moveSpeed;
@@ -104,7 +105,6 @@ export class SwordMan extends Actor {
             moving = true;
             reverseRotation = 180;
         }
-        moving = moving && !this._attacking;
         Vec3.lerp(speed, speed, this.targetSpeed, deltaTime * 5);
 
         /** 使用Jumping作为攻击键 */
@@ -114,13 +114,13 @@ export class SwordMan extends Actor {
 
         if (moving) {
             this._IdleTimer = 0;
-            this.play(new AnimationInfo('Run'));
+            this.play('Run');
         }
         else {
             speed.x = speed.z = 0;
-            this.play(new AnimationInfo('Idle'));
+            this.play('Idle');
         }
-        if(!this._attacking){
+        if (!this._attacking) {
             if (this.joyStick) {
                 this.rotation = this.targetRotation + reverseRotation;
             }
@@ -132,24 +132,34 @@ export class SwordMan extends Actor {
         speed.y = tempVec3.y;
         this.rigidBody!.setLinearVelocity(speed);
 
-
-        this.animation!.node.eulerAngles = tempVec3.set(0, this.rotation, 0);
+        this.node.eulerAngles = tempVec3.set(0, this.rotation, 0);
         super.update(deltaTime);
     }
-    protected attack(){
+    protected attack() {
+        if (this._attacking) return;
         const aniName = this._currentAnim?.name;
-        if(aniName == 'Idle'|| aniName == 'Idle1'){
-            const ex = ['Idle','Idle1','Run'];
-            const anim = new AnimationInfo('Attack1',4,ex,'Idle');
-            if(this._animQuque.length > 0){
-                if(this._animQuque[0].name === 'Attack1'){
+        if (aniName == 'Idle' || aniName == 'Idle1') {
+            const ex = ['Idle', 'Idle1', 'Run'];
+            const anim = new AnimationInfo('Attack1', 2, ex, 'Idle');
+            let delay = 0.8;
+            if (this._animQuque.length > 0) {
+                const name = this._animQuque[this._animQuque.length - 1].name;
+                if (name === 'Attack1') {
                     anim.name = 'Attack2';
-                }else if(this._animQuque[0].name === 'Attack2'){
+                } else if (name === 'Attack2') {
                     anim.name = 'Attack3';
+                    delay = 1.2;
                 }
             }
             this._attacking = true;
             this.play(anim);
+            this.scheduleOnce(() => {
+                this.checkHit();
+            }, delay);
         }
+    }
+    protected beaten() {
+        super.beaten();
+        this.play(new AnimationInfo("Impact", -1, [], 'Idle'));
     }
 }

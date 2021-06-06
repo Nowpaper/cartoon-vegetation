@@ -21,10 +21,10 @@ export class Actor extends Component {
 
     _currentAnim: AnimationInfo | null = null;
     start() {
-        if(!this.animation){
+        if (!this.animation) {
             this.animation = this.node.getComponentInChildren(Animation);
         }
-        if(!this.rigidBody){
+        if (!this.rigidBody) {
             this.rigidBody = this.node.getComponent(RigidBody);
         }
         this.animation!.on(AnimationComponent.EventType.FINISHED, this.onAnimationFinished.bind(this));
@@ -41,17 +41,23 @@ export class Actor extends Component {
         if (this._currentAnim) {
             this._currentAnim.cooldown -= deltaTime;
         }
-        if (this._animQuque.length > 0) {
-            this._animQuque[0].cooldown -= deltaTime;
-            if (this._animQuque[0].cooldown <= 0) {
-                this._animQuque.splice(0, 1);
+        for (let i = this._animQuque.length - 1; i >= 0; i--) {
+            this._animQuque[i].cooldown -= deltaTime;
+            if (this._animQuque[i].cooldown <= 0) {
+                this._animQuque.splice(i, 1);
             }
         }
     }
 
-    play(info: AnimationInfo) {
+    play(anim: string | AnimationInfo) {
         if (!this.animation) {
             return;
+        }
+        let info: null | AnimationInfo = null;
+        if (typeof anim === 'string') {
+            info = new AnimationInfo(anim);
+        } else {
+            info = anim;
         }
         if (this._currentAnim?.name === info.name) {
             let state = this.animation.getState(info.name);
@@ -65,7 +71,13 @@ export class Actor extends Component {
         this._currentAnim = info;
         this.animation.crossFade(info.name, 0.1);
         if (info.cooldown > 0) {
-            this._animQuque.push(info);
+            if (this._animQuque.length > 0) {
+                if (this._animQuque[this._animQuque.length - 1].name != info.name) {
+                    this._animQuque.push(info);
+                }
+            } else {
+                this._animQuque.push(info);
+            }
         }
     }
     onAnimationFinished(type, state) {
@@ -73,20 +85,38 @@ export class Actor extends Component {
             if (this._currentAnim && this._currentAnim.finishedTo != '') {
                 this._currentAnim.exclude = [];
                 this._attacking = false;
-                this.play(new AnimationInfo(this._currentAnim.finishedTo));
+                this._beating = false;
+                this.play(this._currentAnim.finishedTo);
+            } else {
+                this.play("Idle")
             }
         }
     }
     protected _IdleTimer = math.random() * 5 + 3;
     /** 一个动画队列 */
-    protected _animQuque:AnimationInfo[] = [];
-    protected attack(){
+    protected _animQuque: AnimationInfo[] = [];
+    protected attack() {
         this._attacking = true;
     }
     protected _attacking = false;
     protected _beating = false;
     /** 被打中 */
-    protected beaten(){
+    protected beaten() {
         this._beating = true;
+    }
+    protected checkHit() {
+        if (this.node.parent) {
+            for (let actor of this.node.parent?.children) {
+                const actorSc = actor.getComponent(Actor);
+                if (actorSc && actorSc.actorGroup != this.actorGroup) {
+                    const v = actor.worldPosition.clone().subtract(this.node.worldPosition);
+                    const len = v.length();
+                    const angle = Vec3.angle(v, this.node.forward) / Math.PI * 180 - 180;
+                    if (len <= 1 && 25 > Math.abs(angle)) {
+                        actorSc.beaten();
+                    }
+                }
+            }
+        }
     }
 }
