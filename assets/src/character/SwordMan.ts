@@ -139,16 +139,11 @@ export class SwordMan extends Component {
 
 
         if (moving) {
-            if (Math.abs(this.runSpeed - speedAmount) <= 5) {
-                this.play('FastRun');
-            }
-            else {
-                this.play('Running');
-            }
+            this.play('Run');
         }
         else {
             speed.x = speed.z = 0;
-            this.play('Yawn');
+            this.play('ldle');
         }
 
         if (this.joyStick) {
