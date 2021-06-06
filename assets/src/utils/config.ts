@@ -19,6 +19,5 @@ game.on(Game.EVENT_ENGINE_INITED, () => {
 
     if (!sys.isMobile) {
         Config.highFps = true
-        Config.highQuality = true
     }
 })
